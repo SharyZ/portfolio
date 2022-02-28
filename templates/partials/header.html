@@ -1,0 +1,67 @@
+{% load static %}
+
+<header class="container mx-auto p-6">
+  <nav class="md:flex md:justify-between">
+    <div class="flex items-center justify-between">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'image/logo.svg' %}" alt="" />
+      </a>
+      <button
+        id="menu-btn"
+        class="rounded-md border p-2 focus:ring-2 md:hidden"
+      >
+        <svg
+          width="16"
+          height="14"
+          viewBox="0 0 16 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M0 1C0 0.447715 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1C16 1.55228 15.5523 2 15 2H1C0.447715 2 0 1.55228 0 1ZM0 7C0 6.44772 0.447715 6 1 6H15C15.5523 6 16 6.44772 16 7C16 7.55228 15.5523 8 15 8H1C0.447715 8 0 7.55228 0 7ZM1 12C0.447715 12 0 12.4477 0 13C0 13.5523 0.447715 14 1 14H15C15.5523 14 16 13.5523 16 13C16 12.4477 15.5523 12 15 12H1Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+    </div>
+    <ul
+      class="hidden p-2 text-white md:flex md:items-center md:space-x-12"
+      id="menu"
+    >
+      <li>
+        <a
+          href="{% url 'about' %}"
+          class="mt-1 block rounded-md px-2 py-1 hover:bg-slate-500 md:inline-block"
+        >
+          About Me
+        </a>
+      </li>
+      <li>
+        <a
+          href="{% url 'projects' %}"
+          class="mt-1 block rounded-md px-2 py-1 hover:bg-slate-500 md:inline-block"
+        >
+          Portfolio
+        </a>
+      </li>
+      <li>
+        <a
+          href="blog.html"
+          class="mt-1 block rounded-md px-2 py-1 hover:bg-slate-500 md:inline-block"
+        >
+          Blog
+        </a>
+      </li>
+      <li>
+        <a
+          href="{% url 'contact' %}"
+          class="bg-primary-700 hover:bg-primary-500 block rounded-md px-4 py-2 font-semibold leading-6 text-white shadow-md duration-100 ease-in"
+        >
+          Contact Me
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

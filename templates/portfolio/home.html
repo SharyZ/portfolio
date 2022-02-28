@@ -1,0 +1,35 @@
+{% extends 'layouts/main.html' %} {% load static %}
+
+<!---->
+
+{% block content %}
+<section class="py-10">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col-reverse sm:flex-row md:items-center md:space-x-8">
+      <div class="md:w-1/2">
+        <h1
+          class="mb-6 text-3xl font-extrabold leading-tight md:text-4xl lg:text-6xl xl:text-7xl"
+        >
+          I help build your dream project
+        </h1>
+        <p class="mb-9 text-sm md:text-base">
+          Agency provides a full service range including technical skills,
+          design, business understanding.
+        </p>
+        <div class="flex items-center space-x-8">
+          <a
+            href="{% url 'home' %}"
+            class="bg-primary-700 hover:bg-primary-500 block rounded-md px-6 py-4 font-semibold leading-6 text-white shadow-md duration-100 ease-in"
+          >
+            Download CV
+          </a>
+          <a href="{% url 'contact' %}" class="inline-block">Contact Me</a>
+        </div>
+      </div>
+      <div class="md:w-1/2">
+        <img src="{% static 'image/intro.png' %}" alt="" width="570" />
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

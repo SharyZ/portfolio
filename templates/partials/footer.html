@@ -1,0 +1,17 @@
+{% load static %}
+
+<footer class="container mx-auto p-6">
+  <div class="flex items-center justify-between">
+    <a href="{% url 'home' %}">
+      <img src="{% static 'image/logo.svg' %}" alt="" />
+    </a>
+    <div>
+      <a
+        href="{% url 'contact' %}"
+        class="bg-primary-700 hover:bg-primary-500 block rounded-md px-4 py-2 font-semibold leading-6 text-white shadow-md duration-100 ease-in"
+      >
+        Contact Me
+      </a>
+    </div>
+  </div>
+</footer>
