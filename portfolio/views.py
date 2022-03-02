@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from projects.models import Project
+from blog.models import Post
 
 # Create your views here.
 
@@ -8,9 +9,11 @@ from projects.models import Project
 def home_page(request):
     # last_projects = Project.objects.all()[:3]
     last_projects = Project.objects.order_by('-id')[:3]
+    last_posts = Post.objects.all().order_by('-published_date')[:2]
 
     context = {
         'last_projects': last_projects,
+        'last_posts': last_posts,
     }
     template_name = 'portfolio/home.html'
 
