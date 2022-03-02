@@ -1,0 +1,45 @@
+{% extends 'layouts/main.html' %} {% load static %}
+
+<!---->
+
+{% block content %}
+<section class="py-10">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-center">
+      <div class="text-center md:w-1/2 lg:w-1/3">
+        <h2 class="mb-6 text-5xl font-extrabold leading-tight">Portfolio</h2>
+        <p class="mb-9">
+          Agency provides a full service range including technical skills,
+          design, business understanding.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto px-4">
+    <div class="mb-12 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+      {% for project in projects %}
+      <a
+        href="{% url 'projects-detail' project.id %}"
+        class="relative mx-auto block duration-100 ease-in hover:-translate-y-2"
+      >
+        <img src="{{ project.featured_image.url }}" alt="" width="370" />
+        <div class="absolute left-5 bottom-5">
+          <div class="mb-4 flex space-x-2">
+            {% for tag in project.tags.all %}
+            <div
+              class="rounded-full bg-white px-2 py-1 text-sm font-semibold text-slate-900"
+            >
+              {{ tag }}
+            </div>
+            {% endfor %}
+          </div>
+          <h3 class="text-xl font-extrabold text-white md:text-4xl">
+            {{ project.name }}
+          </h3>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock content %}

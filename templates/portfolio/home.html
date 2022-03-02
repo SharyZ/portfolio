@@ -32,4 +32,43 @@
     </div>
   </div>
 </section>
+<section class="py-10">
+  <div class="container mx-auto px-4">
+    <div class="mb-12 flex items-center justify-center">
+      <h2 class="text-2xl font-extrabold md:text-5xl">Latest Works</h2>
+    </div>
+    <div class="mb-12 grid grid-cols-1 gap-5 md:grid-cols-3">
+      {% for last_project in last_projects %}
+      <a
+        href="{% url 'projects-detail' last_project.id %}"
+        class="relative mx-auto block duration-100 ease-in hover:-translate-y-2"
+      >
+        <img src="{{ last_project.featured_image.url }}" alt="" width="370" />
+        <div class="absolute left-5 bottom-5">
+          <div class="mb-4 flex space-x-2">
+            {% for tag in project.tags.all %}
+            <div
+              class="rounded-full bg-white px-2 py-1 text-sm font-semibold text-slate-900"
+            >
+              {{ tag }}
+            </div>
+            {% endfor %}
+          </div>
+          <h3 class="text-xl font-extrabold text-white md:text-4xl">
+            {{ last_project.name }}
+          </h3>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="flex items-center justify-center">
+      <a
+        href="{% url 'projects' %}"
+        class="hover:bg-primary-700 rounded-md border border-slate-500 px-4 py-2 text-sm text-white duration-100 ease-in hover:border-transparent"
+      >
+        See more
+      </a>
+    </div>
+  </div>
+</section>
 {% endblock content %}

@@ -1,0 +1,22 @@
+{% extends 'layouts/main.html' %} {% load static %}
+
+<!---->
+
+{% block content %}
+<section class="py-10">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-center">
+      <div class="text-center md:w-1/2 lg:w-1/3">
+        <h2 class="mb-6 text-5xl font-extrabold leading-tight">Portfolio</h2>
+        <p class="mb-9">
+          Agency provides a full service range including technical skills,
+          design, business understanding.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-4xl px-4">
+    <div class="prose lg:prose-xl mx-auto">{{ project.content|safe}}</div>
+  </div>
+</section>
+{% endblock content %}
