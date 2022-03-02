@@ -46,7 +46,7 @@
         <img src="{{ last_project.featured_image.url }}" alt="" width="370" />
         <div class="absolute left-5 bottom-5">
           <div class="mb-4 flex space-x-2">
-            {% for tag in project.tags.all %}
+            {% for tag in last_project.tags.all %}
             <div
               class="rounded-full bg-white px-2 py-1 text-sm font-semibold text-slate-900"
             >
